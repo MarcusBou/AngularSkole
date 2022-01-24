@@ -1,0 +1,9 @@
+<div class="m-3">
+    <select [(ngModel)]="value">
+        <option value="Square" selected>Square</option>
+        <option value="Rectangle"> Rectangle</option>
+    </select>
+</div>
+
+<app-square *ngIf="value == 'Square'"></app-square>
+<app-rectangle *ngIf="value == 'Rectangle'"></app-rectangle>
