@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Pal } from '../interface/pal';
 
 @Component({
   selector: 'app-my-pal',
@@ -6,10 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./my-pal.component.css']
 })
 export class MyPalComponent implements OnInit {
-
-  @Input() imageLocation: string = "kage";
-  @Input() name :  string = "kage";
-  @Input() text! : string;
+  @Input() myPal! : Pal;
   constructor() { 
     
 
