@@ -1,0 +1,5 @@
+<textarea [(ngModel)]="text" cols="30" rows="10" style="resize:none;"></textarea>
+<h3 class="border-bottom">Morsecode</h3>
+<p>{{text | morseCode}}</p>
+<h3 class="border-top border-bottom">MD5</h3>
+<p *ngIf="text !== ''">{{text | mD5}}</p>

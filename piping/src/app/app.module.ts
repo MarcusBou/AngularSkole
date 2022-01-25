@@ -4,17 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { RectangleComponent } from './rectangle/rectangle.component';
-import { SquareComponent } from './square/square.component';
-
+import { PipingTranslatorComponent } from './components/piping-translator/piping-translator.component';
+import { MorseCodePipe } from './pipes/morse-code.pipe';
+import { MD5Pipe } from './pipes/md5.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    RectangleComponent,
-    SquareComponent
+    PipingTranslatorComponent,
+    MorseCodePipe,
+    MD5Pipe
   ],
   imports: [
     BrowserModule,
