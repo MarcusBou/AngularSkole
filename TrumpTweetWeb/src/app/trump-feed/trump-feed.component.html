@@ -2,15 +2,25 @@
 <div *ngIf="tweets.length != 0">
     <div *ngFor="let tweet of tweets">
         <div class="card m-2" style="width: 22rem;">
-            <div *ngIf="!tweet.text.includes('There')">
+            <div [class.Textcolor]="TopLikes(tweet.likes, tweet.date)" *ngIf="SearchWord(tweet.text); else Green">
                 <div class="card-body">
                   <h5 class="card-title">Donald J. Trump</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{tweet.date}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">{{tweet.date | date}}</h6>
                   <p class="card-text">{{tweet.text}}</p>
                   <p class="card-subtitle text-muted">likes: {{tweet.likes}}</p>
                 </div>
-            </div>
+              </div>
+              <ng-template #Green>
+                <div [class.Textcolor]="TopLikes(tweet.likes, tweet.date)" style="background-color: lightgreen;">
+                  <div class="card-body">
+                    <h5 class="card-title">Donald J. Trump</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{tweet.date | date}}</h6>
+                    <p class="card-text">{{tweet.text}}</p>
+                    <p class="card-subtitle text-muted">likes: {{tweet.likes}}</p>
+                  </div>
+                </div>
+              </ng-template>
           </div>
     </div>
 </div>
-    
+  
