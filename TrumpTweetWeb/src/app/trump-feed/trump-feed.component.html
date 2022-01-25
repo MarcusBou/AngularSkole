@@ -2,7 +2,7 @@
 <div *ngIf="tweets.length != 0">
     <div *ngFor="let tweet of tweets">
         <div class="card m-2" style="width: 22rem;">
-            <div *ngIf="tweet.text.includes('there')">
+            <div *ngIf="!tweet.text.includes('There')">
                 <div class="card-body">
                   <h5 class="card-title">Donald J. Trump</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{tweet.date}}</h6>
