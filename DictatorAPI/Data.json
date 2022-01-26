@@ -1,0 +1,12 @@
+{
+    "Count": 1,
+    "Dictators":{
+        "1":{
+            "DicFName": "Adolf",
+            "DicLName": "Hitler",
+            "DicBYear": 1889,
+            "DicDYear": 1945,
+            "DicDesc": "He Hated Jews"
+        }
+    }
+}
