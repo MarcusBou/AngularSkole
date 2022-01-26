@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DictatorRegisterComponent } from './dictator-register.component';
+import { ShowDictatorComponent } from './show-dictator.component';
 
-describe('DictatorRegisterComponent', () => {
-  let component: DictatorRegisterComponent;
-  let fixture: ComponentFixture<DictatorRegisterComponent>;
+describe('ShowDictatorComponent', () => {
+  let component: ShowDictatorComponent;
+  let fixture: ComponentFixture<ShowDictatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DictatorRegisterComponent ]
+      declarations: [ ShowDictatorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DictatorRegisterComponent);
+    fixture = TestBed.createComponent(ShowDictatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="addDicForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-2">
+            <label for="inputName">First name</label>
+            <input id="inputName" class="form-control" formControlName="DicFName" type="text">
+        </div>
+        <div>
+            <label for=""> Lastname</label>
+            <input class="form-control" formControlName="DicLName" type="text">
+        </div>
+        <div>
+            <label for="">year of birth</label>
+            <input class="form-control" formControlName="DicBYear" type="number">
+        </div>
+        <div>
+            <label for="">year of death</label>
+            <input class="form-control" formControlName="DicDYear" type="number">
+        </div>
+        <div>
+            <label for="">Description</label>
+            <textarea class="form-control" style="resize: none;" formControlName="DicDesc" cols="50" rows="10"></textarea>
+        </div>
+        <button class="form-control" [disabled]="!addDicForm.valid" type="submit">Register</button>
+    </form>
+</div>

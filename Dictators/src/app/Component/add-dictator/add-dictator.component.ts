@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,  Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { DicService } from 'src/app/services/dic.service';
 
 @Component({
   selector: 'app-add-dictator',
@@ -8,20 +9,21 @@ import { FormBuilder,  Validators} from '@angular/forms';
 })
 export class AddDictatorComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private dicServ: DicService) {}
 
   ngOnInit(): void {
   }
 
-  DicRegistration = this.fb.group({
+  addDicForm = this.fb.group({
     DicFName: ['', Validators.required],
     DicLName: ['', Validators.required],
     DicBYear: ['', Validators.required],
     DicDYear: [''],
-    DicDesc: ['', Validators.required] 
+    DicDesc: ['', Validators.required]
   })
 
   onSubmit(): void{
-    
+    console.log(this.addDicForm.value)
+    this.dicServ.addDictator(this.addDicForm.value).subscribe();
   }
 }
