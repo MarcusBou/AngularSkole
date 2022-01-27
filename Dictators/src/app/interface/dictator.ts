@@ -1,5 +1,5 @@
 export interface Dictator {
-    ids: number;
+    //ids: number;
     DicFName: string;
     DicLName: string;
     DicBYear: number;

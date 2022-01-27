@@ -17,13 +17,13 @@ export class ShowDictatorComponent implements OnInit {
   ngOnInit(): void {
     console.log("I will show now")
     this.dc.showDictator().subscribe((data: Dictator[]) => {
-      complete: 
+      next: 
       this.Dictators = data;
       console.log(this.Dictators)
     })
   }
 
   onClick():void{
-    console.log(this.Dictators);
+    console.log(this.Dictators[0]);
   }
 }
