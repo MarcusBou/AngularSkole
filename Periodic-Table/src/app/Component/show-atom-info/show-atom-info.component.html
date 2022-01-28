@@ -1,0 +1,23 @@
+<div class="atomInfoCard">
+    <div class="atom-symbol" [style.Background-color]="GetColor()">
+        <p>{{infoAtom?.atomicNumber}}</p>
+        <h1>{{infoAtom?.symbol}}</h1>
+        <p>{{infoAtom?.name}}</p>
+        <p>{{infoAtom?.atomicMass}}</p>
+        <p>{{infoAtom?.cpkHexColor}}</p>
+    </div>
+    <div class="atom-info">
+        <p>AtomicNumber: <strong>{{infoAtom?.atomicNumber}}</strong></p>
+        <p>Symbol: <strong>{{infoAtom?.symbol}}</strong></p>
+        <p>Name: <strong>{{infoAtom?.name}}</strong></p>
+        <p>AtomicMass: <strong>{{infoAtom?.atomicMass}}</strong></p>
+        <p>Electronegativity: <strong>{{infoAtom?.electronegativity}}</strong></p>
+        <p>Radius: <strong>{{infoAtom?.atomicRadius}}</strong></p>
+        <p>State: <strong>{{infoAtom?.standardState}}</strong></p>
+        <p>Melting-Point: <strong>{{infoAtom?.meltingPoint}}</strong></p>
+        <p>Booiling-point: <strong>{{infoAtom?.boilingPoint}}</strong></p>
+        <p>Density: <strong>{{infoAtom?.density}}</strong></p>
+        <p>Group: <strong>{{infoAtom?.groupBlock}}</strong></p>
+        <p>Year Discovered: <strong>{{infoAtom?.yearDiscovered}}</strong></p>
+    </div>
+</div>

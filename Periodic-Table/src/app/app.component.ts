@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Atom } from './interface/atom';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Periodic-Table';
+
+  currentatom?: Atom;
+  
+  showAtom(atom:Atom){
+    this.currentatom = atom;
+  }
 }

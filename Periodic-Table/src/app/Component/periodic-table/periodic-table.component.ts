@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Output,EventEmitter } from '@angular/core';
 import { Atom } from 'src/app/interface/atom';
 import { GetPeriodicService } from 'src/app/service/get-periodic.service';
 
@@ -11,11 +12,15 @@ export class PeriodicTableComponent implements OnInit {
 
   constructor(private periodicService: GetPeriodicService) { }
 
+  @Output() newAtomEvent = new EventEmitter<Atom>();
+  atom?:Atom;
   atoms: Atom[] = [];
   ngOnInit(): void {
     this.periodicService.getAllData().subscribe((data: Atom[]) =>{
       next: this.atoms = data;
       complete: this.atoms[4].period = 2;
+      this.newAtomEvent.emit(this.atoms[0]);
+      this.atom = this.atoms[0];
     })
   }
 
@@ -34,7 +39,8 @@ export class PeriodicTableComponent implements OnInit {
   }
 
   onclick(atom:Atom){
-    console.log(atom.name)
+    this.atom = atom;
+    this.newAtomEvent.emit(atom);
   }
 
 }

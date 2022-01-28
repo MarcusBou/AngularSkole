@@ -1,0 +1,32 @@
+.atomInfoCard{
+    width: 50%;
+    border:1px solid black;
+}
+.atom-symbol{
+    width: 30%;
+    background-color: #eee;
+    border-width: 3px;
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.26);
+} 
+.atom-symbol h1{
+    margin: 0 auto;
+}
+.atom-symbol p{
+    font-weight: bold;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.atom-info{
+    float:right;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(6, auto);
+    width: 66%;
+}
+
+
+.atom-info p{
+    margin: 0 auto;
+    font-size: 16px;
+}
