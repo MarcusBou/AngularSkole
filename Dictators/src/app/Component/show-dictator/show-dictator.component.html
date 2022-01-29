@@ -1,4 +1,10 @@
-<button (click)="onClick()"></button>
-<div *ngFor="let Dictator of Dictators">
-    <p>{{Dictator.DicFName}}</p>
+<div *ngFor="let Dictator of Dictators; let i = index">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{Dictator.DicFName}} {{Dictator.DicLName}}</h5>
+          <p class="card-text">{{Dictator.DicDesc}}</p>
+          <p class="card-text"><small class="text-muted">{{Dictator.DicBYear}} - {{Dictator.DicDYear}}</small></p>
+          <button (click)="DeleteDictator(i)" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
 </div>

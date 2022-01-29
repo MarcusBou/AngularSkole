@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { empty } from 'rxjs';
 import { DicService } from 'src/app/services/dic.service';
+import { HandleDicService } from 'src/app/services/handle-dic.service';
 
 @Component({
   selector: 'app-add-dictator',
@@ -9,7 +11,7 @@ import { DicService } from 'src/app/services/dic.service';
 })
 export class AddDictatorComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private dicServ: DicService) {}
+  constructor(private fb: FormBuilder, private dicServ: DicService, private hdc: HandleDicService) {}
 
   ngOnInit(): void {
   }
@@ -25,5 +27,6 @@ export class AddDictatorComponent implements OnInit {
   onSubmit(): void{
     console.log(this.addDicForm.value)
     this.dicServ.addDictator(this.addDicForm.value).subscribe();
+    window.location.reload();
   }
 }

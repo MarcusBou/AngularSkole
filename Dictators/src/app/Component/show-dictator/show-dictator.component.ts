@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { elementAt, observable } from 'rxjs';
 import { Dictator } from 'src/app/interface/dictator';
 import { DicService } from 'src/app/services/dic.service';
+import { HandleDicService } from 'src/app/services/handle-dic.service';
 
 @Component({
   selector: 'app-show-dictator',
@@ -9,19 +10,38 @@ import { DicService } from 'src/app/services/dic.service';
   styleUrls: ['./show-dictator.component.css']
 })
 export class ShowDictatorComponent implements OnInit {
-
-  constructor(private dc: DicService) { }
-
+  
   Dictators: Dictator[] = [];
+  DictatorsReady: boolean = false;
 
-  ngOnInit(): void {
-    console.log("I will show now")
-    this.dc.showDictator().subscribe((data: Dictator[]) => {
-      next: this.Dictators = data;
+  constructor(private dc: DicService, private hdc: HandleDicService) { 
+    this.hdc.Dictators$.subscribe((dic: Dictator[])=>{
+      next:
+      if(this.Dictators.length !== dic.length){
+        this.Dictators = dic;
+      }
+    })
+    this.hdc.DictatorsReady$.subscribe((b:boolean)=>{
+      this.DictatorsReady = b;
+      if(this.DictatorsReady){
+        console.log("this.Dictators:", this.Dictators)
+      }
     })
   }
 
-  onClick():void{
-    console.log(this.Dictators[0]);
+  LoadDictators() {
+    this.hdc.LoadDictators();
+  }
+
+
+  ngOnInit(): void {
+    this.LoadDictators();
+  }
+
+  DeleteDictator(index: number){
+    this.dc.deleteDictator(index).subscribe(() => {
+    });
+    console.log("Deletet: " + index);
+    this.LoadDictators();
   }
 }

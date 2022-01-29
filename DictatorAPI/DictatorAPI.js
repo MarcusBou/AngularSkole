@@ -12,7 +12,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     let rawData = fs.readFileSync(path);
     let data = JSON.parse(rawData);
-    res.send(JSON.stringify(data['Dictators']));
+    res.send(JSON.stringify(data["dictators"]));
 });
 
 
@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
         let rawdata = fs.readFileSync(path);
         let jsondata = JSON.parse(rawdata);
 
-        jsondata["Dictators"].push(data);
+        jsondata["dictators"].push(data);
         fs.writeFileSync(path, JSON.stringify(jsondata));
         res.end("FUCK");
     }else{

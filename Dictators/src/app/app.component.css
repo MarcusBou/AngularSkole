@@ -1,0 +1,13 @@
+div.addele {
+    width: 30%;
+    color:#606060;
+    padding:10px;
+    position:fixed;
+    float:left;
+}
+
+div.showele {
+    float: right;
+    overflow:scroll;
+    width: 70%;
+}

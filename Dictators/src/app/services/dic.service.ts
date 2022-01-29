@@ -18,7 +18,7 @@ export class DicService {
     return this.http.get<Dictator[]>(this.URL);
   }
 
-  deleteDictator(userdata:any){
-    return this.http.delete<any>(this.URL, userdata)
+  deleteDictator(userdata:number){
+    return this.http.delete<any>(this.URL + "?ids=" + userdata)
   }
 }
