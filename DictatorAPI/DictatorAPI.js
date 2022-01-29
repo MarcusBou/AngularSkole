@@ -33,14 +33,22 @@ app.post('/', (req, res) => {
 })
 
 app.delete('/', (req, res) =>{
-    id = req.query.ids;
+    let id = req.query.ids;
 
     if (id) {
         let rawdata = fs.readFileSync(path);
         let data = JSON.parse(rawdata);
-        console.log(data["Dictators"][id.toString()]);
-        delete data["Dictators"][id.toString()];
-        fs.writeFileSync(path, JSON.stringify(data));
+        if(data["dictators"][id] != null){
+            delete data["dictators"][id];
+            console.log(data["dictators"][id]);
+            let filteredArray = { "dictators": data["dictators"].filter(function (e) {
+                return e != null;
+            })};
+            fs.writeFileSync(path, JSON.stringify(filteredArray));
+            res.end("Deleted" + id);
+        }else{
+            res.end("Couldnt find index data");
+        }
     }
     else {
         res.end('The Required data is not set');
