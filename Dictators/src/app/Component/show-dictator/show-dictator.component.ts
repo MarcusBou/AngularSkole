@@ -17,9 +17,7 @@ export class ShowDictatorComponent implements OnInit {
   ngOnInit(): void {
     console.log("I will show now")
     this.dc.showDictator().subscribe((data: Dictator[]) => {
-      next: 
-      this.Dictators = data;
-      console.log(this.Dictators)
+      next: this.Dictators = data;
     })
   }
 

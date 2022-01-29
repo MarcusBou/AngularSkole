@@ -12,7 +12,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     let rawData = fs.readFileSync(path);
     let data = JSON.parse(rawData);
-    res.send(JSON.stringify(data));
+    res.send(JSON.stringify(data['Dictators']));
 });
 
 
@@ -23,9 +23,8 @@ app.post('/', (req, res) => {
     if(data.DicFName){
         let rawdata = fs.readFileSync(path);
         let jsondata = JSON.parse(rawdata);
-        jsondata["Count"]++;
-        console.log(jsondata["Count"]);
-        jsondata["Dictators"][jsondata["Count"].toString()] = data;
+
+        jsondata["Dictators"].push(data);
         fs.writeFileSync(path, JSON.stringify(jsondata));
         res.end("FUCK");
     }else{
