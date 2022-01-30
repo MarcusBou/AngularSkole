@@ -5,6 +5,7 @@
     <div class="AmetalText" style="grid-row: 7; grid-column: 3;"><h3>89-103</h3></div>
     <div class="AmetalText" style="grid-row: 9; grid-column: 3;"><h3>6</h3></div>
     <div class="AmetalText" style="grid-row: 10; grid-column: 3;"><h3>7</h3></div>
+    <app-show-atom-info style="grid-row: 1 / 3 ; grid-column: 4 / span4;" [infoAtom]="atom"></app-show-atom-info>
     <ng-template [ngIf]="true" *ngFor="let atom of atoms">
         <div class="Element" (click)="onclick(atom)" *ngIf="CheckNumber(atom);else OtherMetals" [style.grid-row]="atom.period" [style.grid-column]="atom.group" [style.background-color]="GetColor(atom)">
             <p>{{atom.atomicNumber}}</p>
@@ -21,5 +22,4 @@
             </div>
         </ng-template>
     </ng-template>
-    <app-show-atom-info style="grid-row: 1 / span 3; grid-column: 4 / span6;" [infoAtom]="atom"></app-show-atom-info>
 </div>

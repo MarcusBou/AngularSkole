@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Output,EventEmitter } from '@angular/core';
+import { Colors } from 'src/app/Classes/colors';
 import { Atom } from 'src/app/interface/atom';
 import { GetPeriodicService } from 'src/app/service/get-periodic.service';
 
@@ -15,6 +16,8 @@ export class PeriodicTableComponent implements OnInit {
   @Output() newAtomEvent = new EventEmitter<Atom>();
   atom?:Atom;
   atoms: Atom[] = [];
+  colors: Colors = new Colors();
+
   ngOnInit(): void {
     this.periodicService.getAllData().subscribe((data: Atom[]) =>{
       next: this.atoms = data;
@@ -25,7 +28,7 @@ export class PeriodicTableComponent implements OnInit {
   }
 
   GetColor(atom: Atom):string{
-    return "#" + atom.cpkHexColor;
+    return this.colors.findColor(atom);
   }
 
   CheckNumber(atom:Atom):boolean{

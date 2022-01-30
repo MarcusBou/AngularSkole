@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Colors } from 'src/app/Classes/colors';
 import { Atom } from 'src/app/interface/atom';
 
 @Component({
@@ -10,14 +11,15 @@ export class ShowAtomInfoComponent implements OnInit {
 
   constructor() { }
   @Input() infoAtom? : Atom;
+  color: Colors = new Colors();
   ngOnInit(): void {
   }
 
   GetColor():string{
-    if(this.infoAtom?.cpkHexColor == 'unknown'){
-      return '#eee'
+    if(this.infoAtom?.groupBlock != null){
+      return this.color.findColor(this.infoAtom);
     }else{
-      return "#" + this.infoAtom?.cpkHexColor;
+      return "#eee";
     }
   }
 }
