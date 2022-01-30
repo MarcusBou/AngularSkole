@@ -59,7 +59,22 @@
     margin: 5px 0px;
     transition: 0.3s;
     text-align: center;
-    border: black 1px solid;
+}
+
+.StatesSelect .gas {
+    border: #00ff00 2px solid;
+}
+
+.StatesSelect .solid {
+    border: #dd6b00 2px solid;
+}
+
+.StatesSelect .liquid {
+    border: #005fcc 2px solid;
+}
+
+.StatesSelect .unknown {
+    border: #af0043 2px solid;
 }
 
 .StatesSelect div:hover {
@@ -67,11 +82,12 @@
 }
 
 .StatesSelect .gas:hover {
+    color:black;
     background-color: #8ced8c;
 }
 
 .StatesSelect .solid:hover {
-    background-color: #c29062;
+    background-color: #d39d6a;
 }
 
 .StatesSelect .liquid:hover {
