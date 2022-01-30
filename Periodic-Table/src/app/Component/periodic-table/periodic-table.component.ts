@@ -24,11 +24,8 @@ export class PeriodicTableComponent implements OnInit {
       complete: this.atoms[4].period = 2;
       this.newAtomEvent.emit(this.atoms[0]);
       this.atom = this.atoms[0];
+      this.ColorReset();
     })
-  }
-
-  GetColor(atom: Atom):string{
-    return this.colors.findColor(atom);
   }
 
   CheckNumber(atom:Atom):boolean{
@@ -46,4 +43,19 @@ export class PeriodicTableComponent implements OnInit {
     this.newAtomEvent.emit(atom);
   }
 
+  ColorReset() {
+    this.atoms.forEach(e => {
+      e.color = this.colors.findColor(e);
+    });
+  }
+
+  StateColor(state: string, color: string) {
+    this.atoms.forEach(e => {
+      if (e.standardState == state) {
+        e.color = '#' + color;
+      } else {
+        e.color = "#fff"
+      }
+    });
+  }
 }

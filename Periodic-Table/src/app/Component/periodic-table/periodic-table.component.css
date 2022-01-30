@@ -47,3 +47,37 @@
 .AmetalText h3{
     font-size: 22px;
 }
+
+.StateSelect {
+    grid-row: 1 / 4;
+    grid-column: 3;
+}
+
+.StateSelect div {
+    height: 50px;
+    line-height: 45px;
+    margin: 5px 0px;
+    transition: 0.3s;
+    text-align: center;
+    border: black 1px solid;
+}
+
+.StateSelect div:hover {
+    transform: scale(1.1);
+}
+
+.StateSelect .gas:hover {
+    background-color: #47cb34;
+}
+
+.StateSelect .solid:hover {
+    background-color: #d97d26;
+}
+
+.StateSelect .liquid:hover {
+    background-color: #3090ff;
+}
+
+.StateSelect .unknown:hover {
+    background-color: #ff4c92;
+}

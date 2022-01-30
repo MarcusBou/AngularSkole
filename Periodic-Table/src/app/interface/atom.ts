@@ -22,4 +22,5 @@ export interface Atom {
     cpkHexColor: string
     period: number;
     group: number;
+    color?:string;
 }

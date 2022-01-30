@@ -1,4 +1,11 @@
+
 <div class="PT-table">
+    <div class="StateSelect">
+        <div class="gas" (mouseenter)="StateColor('gas','47cb34')" (mouseleave)="ColorReset()">Gas</div>
+        <div class="solid" (mouseenter)="StateColor('solid','d97d26')"  (mouseleave)="ColorReset()">Solid</div>
+        <div class="liquid" (mouseenter)="StateColor('liquid','3090ff');"  (mouseleave)="ColorReset()">Liquid</div>
+        <div class="unknown" (mouseenter)="StateColor('unknown','ff4c92');"  (mouseleave)="ColorReset()">Unknown</div>
+    </div>
     <div style="grid-row: 9;"></div><div style="grid-row: 9;"></div><div style="grid-row: 10;"></div><div style="grid-row: 10;"></div>
     <div class="Ametal"></div>
     <div class="AmetalText" style="grid-row: 6; grid-column: 3;"><h3>57-71</h3></div>
@@ -7,14 +14,14 @@
     <div class="AmetalText" style="grid-row: 10; grid-column: 3;"><h3>7</h3></div>
     <app-show-atom-info style="grid-row: 1 / 3 ; grid-column: 4 / span4;" [infoAtom]="atom"></app-show-atom-info>
     <ng-template [ngIf]="true" *ngFor="let atom of atoms">
-        <div class="Element" (click)="onclick(atom)" *ngIf="CheckNumber(atom);else OtherMetals" [style.grid-row]="atom.period" [style.grid-column]="atom.group" [style.background-color]="GetColor(atom)">
+        <div class="Element" (click)="onclick(atom)" *ngIf="CheckNumber(atom);else OtherMetals" [style.grid-row]="atom.period" [style.grid-column]="atom.group" [style.background-color]="atom.color">
             <p>{{atom.atomicNumber}}</p>
             <h1>{{atom.symbol}}</h1>
             <p>{{atom.name}}</p>
             <p>{{atom.atomicMass}}</p>
         </div>
         <ng-template #OtherMetals>
-            <div class="Element" (click)="onclick(atom)" [style.grid-row]="atom.period + 3" [style.background-color]="GetColor(atom)">
+            <div class="Element" (click)="onclick(atom)" [style.grid-row]="atom.period + 3" [style.background-color]="atom.color">
                 <p>{{atom.atomicNumber}}</p>
                 <h1>{{atom.symbol}}</h1>
                 <p>{{atom.name}}</p>
