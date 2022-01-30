@@ -48,12 +48,12 @@
     font-size: 22px;
 }
 
-.StateSelect {
+.StatesSelect {
     grid-row: 1 / 4;
     grid-column: 3;
 }
 
-.StateSelect div {
+.StatesSelect div {
     height: 50px;
     line-height: 45px;
     margin: 5px 0px;
@@ -62,22 +62,22 @@
     border: black 1px solid;
 }
 
-.StateSelect div:hover {
+.StatesSelect div:hover {
     transform: scale(1.1);
 }
 
-.StateSelect .gas:hover {
-    background-color: #47cb34;
+.StatesSelect .gas:hover {
+    background-color: #8ced8c;
 }
 
-.StateSelect .solid:hover {
-    background-color: #d97d26;
+.StatesSelect .solid:hover {
+    background-color: #c29062;
 }
 
-.StateSelect .liquid:hover {
-    background-color: #3090ff;
+.StatesSelect .liquid:hover {
+    background-color: #7baee7;
 }
 
-.StateSelect .unknown:hover {
-    background-color: #ff4c92;
+.StatesSelect .unknown:hover {
+    background-color: #b85b7e;
 }

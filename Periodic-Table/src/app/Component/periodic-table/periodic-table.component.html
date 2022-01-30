@@ -1,10 +1,10 @@
 
 <div class="PT-table">
-    <div class="StateSelect">
-        <div class="gas" (mouseenter)="StateColor('gas','47cb34')" (mouseleave)="ColorReset()">Gas</div>
-        <div class="solid" (mouseenter)="StateColor('solid','d97d26')"  (mouseleave)="ColorReset()">Solid</div>
-        <div class="liquid" (mouseenter)="StateColor('liquid','3090ff');"  (mouseleave)="ColorReset()">Liquid</div>
-        <div class="unknown" (mouseenter)="StateColor('unknown','ff4c92');"  (mouseleave)="ColorReset()">Unknown</div>
+    <div class="StatesSelect">
+        <div class="gas" (mouseenter)="StateChangeColor('gas','#8ced8c')" (mouseleave)="ColorReset()">Gas</div>
+        <div class="solid" (mouseenter)="StateChangeColor('solid','#c29062')"  (mouseleave)="ColorReset()">Solid</div>
+        <div class="liquid" (mouseenter)="StateChangeColor('liquid','#7baee7');"  (mouseleave)="ColorReset()">Liquid</div>
+        <div class="unknown" (mouseenter)="StateChangeColor('unknown','#b85b7e');"  (mouseleave)="ColorReset()">Unknown</div>
     </div>
     <div style="grid-row: 9;"></div><div style="grid-row: 9;"></div><div style="grid-row: 10;"></div><div style="grid-row: 10;"></div>
     <div class="Ametal"></div>

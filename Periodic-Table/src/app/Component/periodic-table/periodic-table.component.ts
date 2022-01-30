@@ -49,10 +49,10 @@ export class PeriodicTableComponent implements OnInit {
     });
   }
 
-  StateColor(state: string, color: string) {
+  StateChangeColor(state: string, color: string) {
     this.atoms.forEach(e => {
       if (e.standardState == state) {
-        e.color = '#' + color;
+        e.color = color;
       } else {
         e.color = "#fff"
       }
